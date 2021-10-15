@@ -10,6 +10,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FileWebApp.API.Data;
+using FileWebApp.API.Services;
+
+using Microsoft.EntityFrameworkCore;
 
 namespace FileWebApp.API
 {
@@ -40,7 +44,7 @@ namespace FileWebApp.API
                  options.UseSqlServer(Configuration.GetConnectionString("ApplicationDbContext")));
 
 
-            //services.AddTransient<IShipmentRepo, ShipmentRepo>();
+            services.AddTransient<ITransactionService, TransactionService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
