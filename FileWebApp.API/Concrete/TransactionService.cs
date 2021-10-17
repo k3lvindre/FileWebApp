@@ -27,9 +27,9 @@ namespace FileWebApp.API.Services
 
         public async Task<List<Transaction>> GetByStatusAsync(string status) => await _dbContext.Transactions.Where(x => x.Status == status).ToListAsync();
 
-        public async Task<int> SaveTransactionAsync(List<Transaction> transactions)
+        public async Task<int> SaveTransactionsAsync(List<Transaction> transactions)
         {
-            await _dbContext.Transactions.AddRangeAsync(transactions);
+            _dbContext.Transactions.AddRange(transactions);
             return await _dbContext.SaveChangesAsync();
         }
     }

@@ -11,6 +11,6 @@ namespace FileWebApp.API.Services
         Task<List<Transaction>> GetByCurrencyAsync(string code);
         Task<List<Transaction>> GetByDateRange(DateTime from, DateTime to);
         Task<List<Transaction>> GetByStatusAsync(string status);
-        Task<int> SaveTransactionAsync(List<Transaction> transactions);
+        Task<int> SaveTransactionsAsync(List<Transaction> transactions);
     }
 }
