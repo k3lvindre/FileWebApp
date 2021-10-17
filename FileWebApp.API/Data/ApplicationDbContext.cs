@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FileWebApp.API.Model;
-
+using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace FileWebApp.API.Data
 {
@@ -16,11 +16,7 @@ namespace FileWebApp.API.Data
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Transaction>()
-                .Property(x => x.Amount)
-                .HasColumnType("decimal(18,2");
-        }
+        {}
 
         public DbSet<Transaction> Transactions { get; set; }
     }

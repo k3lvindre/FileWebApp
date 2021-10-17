@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FileWebApp.API.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class ReCreateTable : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
