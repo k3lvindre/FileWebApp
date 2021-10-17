@@ -135,7 +135,16 @@ namespace FileWebApp.Controllers
             return View();
         }
 
-
+        /// <summary>
+        /// Put all the logic that gets the transactions here.
+        /// Make sure to follow SOLID Principles best as you can
+        /// We have the saying -
+        /// “Always code as if the guy who ends up maintaining your code 
+        /// will be a violent psychopath who knows where you live”
+        /// Anyway,
+        /// Life is full of exploration and I'm glad we found our passion.
+        /// </summary>
+        /// <returns>Thank you!</returns>
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
