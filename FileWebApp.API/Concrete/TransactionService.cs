@@ -21,7 +21,8 @@ namespace FileWebApp.API.Services
 
         public Task<List<Transaction>> GetByDateRange(DateTime from, DateTime to)
         {
-            //sql function
+            //sql function is the best use for this type of query.
+            //call the table type sql function here.
             throw new NotImplementedException();
         }
 
