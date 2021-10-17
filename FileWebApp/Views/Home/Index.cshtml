@@ -2,7 +2,24 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container py-5">
+    @using (Html.BeginForm("Upload", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="row">
+            <div class="col-sm-1 col-md-6 col-xs-12">
+                <div class="form-group">
+                    <label>Choose File:</label>
+                    <div class="input-group">
+                        <div class="custom-file">
+                            <input id="xmlFile" name="xmlFile" type="file" class="custom-file-input" accept=".csv, .xml"/>
+                            <label class="custom-file-label"></label>
+                        </div>
+                        <div class="input-group-append">
+                            <input type="submit" class="btn btn-outline-primary" value="Upload" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
 </div>
