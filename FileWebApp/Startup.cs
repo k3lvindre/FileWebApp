@@ -1,3 +1,5 @@
+using FileWebApp.Config;
+using FileWebApp.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -23,6 +25,13 @@ namespace FileWebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            
+            //add configurations here
+            services.AddOptions<FileWebAppApiConfig>().Bind(Configuration.GetSection("FileWebAppApiConfig"));
+            services.AddOptions<TransactionApiConfig>().Bind(Configuration.GetSection("TransactionApiConfig"));
+           
+            //add services here
+            services.AddTransient<ITransactionService, TransactionService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
